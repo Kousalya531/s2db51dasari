@@ -18,16 +18,3 @@ router.get('/tea/:id', tea_controller.tea_detail);
 // GET request for list of all tea items.
 router.get('/tea', tea_controller.tea_list);
 module.exports = router;
-
-// Handle Costume delete on DELETE. 
-exports.costume_delete = async function(req, res) { 
-    console.log("delete "  + req.params.id) 
-    try { 
-        result = await Costume.findByIdAndDelete( req.params.id) 
-        console.log("Removed " + result) 
-        res.send(result) 
-    } catch (err) { 
-        res.status(500) 
-        res.send(`{"error": Error deleting ${err}}`); 
-    } 
-}; 
