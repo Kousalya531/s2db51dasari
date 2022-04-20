@@ -1,0 +1,23 @@
+extends layout
+block content
+    h1= title
+        if (toShow == null)
+            h2 No instance to view details
+        else
+            - let teaid = toShow._id
+            - let tea_flavour = toShow.tea_flavour
+            - let tea_size = toShow.tea_size
+            - let tea_cost = toShow.tea_cost
+            div
+                div.row
+                    div(class='teaAttr mr-3') tea ID is:
+                    div(class='values') #{teaid}
+                div.row
+                    div(class='teaAttr mr-3') tea flavour is:
+                    div(class='values') #{tea_flavour}
+                div.row
+                    div(class='teaAttr mr-3') tea size is:
+                    div(class='values') #{tea_size}
+                div.row
+                    div(class='teaAttr mr-3') tea cost is:
+                    div(class='values') #{tea_cost}

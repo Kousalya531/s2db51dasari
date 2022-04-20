@@ -6,3 +6,29 @@ body {
 a {
   color: #00B7FF;
 }
+
+.row {
+  font-size: medium;
+}
+
+.teaAttr{
+  background-color: aquamarine;
+  width: 225px;
+  font-size: medium; 
+  box-sizing: border-box;
+  border-style: double;
+  border-color: rgba(184, 76, 201, 0.74);
+  border-radius: 5px;
+  border-width: thick;
+  font-size: medium;
+
+}
+.values {
+  border: outset;
+  width: 225px;
+  border-color: rgb(219, 138, 228);
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: medium;
+
+}
