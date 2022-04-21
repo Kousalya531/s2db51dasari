@@ -1,17 +1,15 @@
 extends layout
-
 block content
-  h1= title
-  -
-    let items=results
-  div(class= "container-fluid")
-    div(class = "row")
-      each item,index in items
-        div(class= "col-sm-2", onclick=`buy(${index})`) #{item.tea_flavour}
-        div(class= "col-sm-2", onclick=`buy(${index})`) #{item.tea_size}
-        div(class= "col-sm-2", onclick=`buy(${index})`) #{item.tea_cost}
+    h1= title
+    - let items = results;
+    div(class="container-fluid")
+        div(class="row m-1")
+            each item in items
+                - let destination = `dispatch(\"/tea/update?id=${item._id}\")`
+                div(class="row-sm-2", class="m-1") Item #{item.tea_flavour}(#{item.tea_size}) is #{item.tea_cost}
+                    button.btn( class="btn-primary ml-1", onclick= destination) Update
 
-  script.
-    function buy(itemNum){
-      alert(`You purchased item ${itemNum+1}`)
-    }
+        script.
+            function dispatch(path){
+            window.location.href=path
+            }
